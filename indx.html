@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Agrinho – Do Campo à Cidade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">Agrinho</span>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#sobre" class="nav__link">Sobre</a>
+        <a href="#pilares" class="nav__link">Pilares</a>
+        <a href="#galeria" class="nav__link">Galeria</a>
+        <a href="#quiz" class="nav__link">Quiz</a>
+        <a href="#contato" class="nav__link">Contato</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Programa Agrinho 2025</p>
+      <h1 class="hero__title">Do Campo<br /><em>à Cidade</em></h1>
+      <p class="hero__sub">
+        Conectando saberes rurais e urbanos para um futuro sustentável.
+      </p>
+      <a href="#sobre" class="btn btn--primary">Conheça o projeto</a>
+      <a href="#quiz" class="btn btn--outline">Fazer o quiz</a>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <div class="field">
+        <div class="sun"></div>
+        <div class="cloud cloud--1"></div>
+        <div class="cloud cloud--2"></div>
+        <div class="tractor"></div>
+        <div class="grass"></div>
+        <div class="city">
+          <div class="building b1"></div>
+          <div class="building b2"></div>
+          <div class="building b3"></div>
+          <div class="building b4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <span class="section__tag">O que é</span>
+      <h2 class="section__title">Sobre o Agrinho</h2>
+      <p class="section__text">
+        O Programa Agrinho é uma iniciativa do Sistema FAEP/SENAR-PR que promove
+        a educação ambiental e o desenvolvimento sustentável. Ele aproxima
+        estudantes da realidade do campo, mostrando como a produção rural
+        alimenta e sustenta a vida nas cidades.
+      </p>
+      <div class="stats">
+        <div class="stat" data-count="1993" data-suffix="">
+          <span class="stat__number" id="statYear">0</span>
+          <span class="stat__label">Ano de fundação</span>
+        </div>
+        <div class="stat" data-count="2000000" data-suffix="+">
+          <span class="stat__number" id="statStudents">0</span>
+          <span class="stat__label">Alunos participantes</span>
+        </div>
+        <div class="stat" data-count="399" data-suffix="">
+          <span class="stat__number" id="statCities">0</span>
+          <span class="stat__label">Municípios no PR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="section section--alt" id="pilares">
+    <div class="container">
+      <span class="section__tag">Fundamentos</span>
+      <h2 class="section__title">Pilares do Programa</h2>
+      <div class="cards" id="cardsGrid"></div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <span class="section__tag">Imagens</span>
+      <h2 class="section__title">Galeria</h2>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="section section--alt" id="quiz">
+    <div class="container quiz-wrap">
+      <span class="section__tag">Teste seus conhecimentos</span>
+      <h2 class="section__title">Quiz Agrinho</h2>
+      <div class="quiz" id="quizBox">
+        <div class="quiz__progress">
+          <div class="quiz__bar" id="quizBar"></div>
+        </div>
+        <p class="quiz__counter" id="quizCounter">Pergunta 1 de 5</p>
+        <p class="quiz__question" id="quizQuestion"></p>
+        <div class="quiz__options" id="quizOptions"></div>
+        <p class="quiz__feedback" id="quizFeedback"></p>
+        <button class="btn btn--primary quiz__next" id="quizNext" style="display:none">Próxima →</button>
+      </div>
+      <div class="quiz__result" id="quizResult" style="display:none">
+        <span class="result__emoji" id="resultEmoji"></span>
+        <p class="result__score" id="resultScore"></p>
+        <p class="result__msg" id="resultMsg"></p>
+        <button class="btn btn--outline" id="quizRestart">Tentar novamente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="container contact-wrap">
+      <span class="section__tag">Fale conosco</span>
+      <h2 class="section__title">Contato</h2>
+      <form class="form" id="contactForm" novalidate>
+        <div class="form__group">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" placeholder="Seu nome completo" required />
+          <span class="form__error" id="nameError"></span>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">E-mail</label>
+          <input class="form__input" type="email" id="email" placeholder="seu@email.com" required />
+          <span class="form__error" id="emailError"></span>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="message">Mensagem</label>
+          <textarea class="form__input form__textarea" id="message" placeholder="Escreva sua mensagem..." required></textarea>
+          <span class="form__error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn--primary">Enviar mensagem</button>
+        <p class="form__success" id="formSuccess"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 Projeto Agrinho – FAEP/SENAR-PR</p>
+      <p class="footer__tagline">🌾 Do campo nasce a vida. Da cidade, o futuro.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

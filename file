@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style> 
+        header{ 
+            background-color: rgb(231, 218, 35);
+            color:rgb(236, 238, 240);
+            text-align: center; 
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 5px solid #c7c410;
+        }
+    main {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+        
+    }
+    img{
+        width: 700px;
+        height: 400px;px;
+    }
+    div p{
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>basico sobre o volê<i></i>
+        </h1>
+        <p>Vou compartilhar meus conhecimentos sobre o volêi1</p>
+</header>
+<main>
+    <p>
+    <p>POR: Murilo Gabriel</p>
+    <h2>Meu primeiro post</h2>
+    <p class= "artigo-autor">por: Murilo Gabriel</p>
+    <p>Boas vindas ao meu primeiro blog, vou compartilhar minhas experiencias pessoais com volêi
+    </p>Volêi é um esporte bem simples mas complicado ao mesmo tempo, o volẽi em partes é um jogo de experiencia quanto mais você joga mais vc se acostuma e melhora resumindo: pratica e mis pratica
+      <p><img src="manchete.png" alt=""
+    </p>manchete um fundamente basico mais muito importante,aonde o objetivo é defender o ataque do adversario
+    <p>saque é feito com o objetivo de passar a bola para o campo adversario, é feito no fundo de quadra tem variacoes para dificultar a recepcao, entre eles, viagem,jornada nas estrelas,flutuante,saque por cima saque por baixo e o hibrido que é um misto entre viagem e flutante
+        <img src="Renan.jpg" alt="saque">
+        <p>O levantamento no vôlei é o fundamento que conecta a defesa ao ataque, preparando a bola para que um atacante finalize a jogada contra a quadra adversária.
+        </main>
+        <img src="images.jpeg" alt="">
+    </body>
+</html>

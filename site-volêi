@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vôlei Brasil 🏐</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0066ff, #00a8ff);
+      color: white;
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 8%;
+      color: white;
+      background:
+        linear-gradient(rgba(0, 64, 160, 0.75), rgba(0, 20, 70, 0.85)),
+        url("https://images.unsplash.com/photo-1592656670411-5b9e6f6b3d3f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background: #ffe600;
+      color: #172033;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background: white;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 45px;
+      color: #0055cc;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #0066ff;
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .card p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .rules {
+      background: #eaf3ff;
+    }
+
+    .rules-list {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 15px;
+    }
+
+    .rule {
+      background: white;
+      padding: 20px;
+      border-left: 6px solid #0066ff;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+
+    .rule strong {
+      color: #0055cc;
+    }
+
+    .facts {
+      background: linear-gradient(135deg, #0055cc, #00a8ff);
+      color: white;
+    }
+
+    .facts .section-title {
+      color: white;
+    }
+
+    .fact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    #fact {
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 25px;
+      border-radius: 25px;
+      background: #ffe600;
+      color: #172033;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: white;
+    }
+
+    footer {
+      background: #101827;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">🏐 Vôlei Brasil</div>
+
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#posicoes">Posições</a></li>
+        <li><a href="#regras">Regras</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>🏐 Apaixonados por Vôlei</h1>
+
+        <p>
+          Descubra a história, as regras, as posições e algumas
+          curiosidades sobre um dos esportes mais populares do Brasil.
+        </p>
+
+        <a href="#sobre" class="button">Conheça o vôlei</a>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2 class="section-title">Sobre o Vôlei</h2>
+
+      <div class="about">
+        <p>
+          O voleibol é um esporte coletivo criado nos Estados Unidos
+          em 1895 por William G. Morgan. O objetivo é fazer a bola
+          passar sobre a rede e tocar o chão da quadra adversária,
+          enquanto cada equipe tenta impedir que isso aconteça em seu
+          próprio lado.
+        </p>
+
+        <br>
+
+        <p>
+          O esporte conquistou milhões de fãs ao redor do mundo e o
+          Brasil se tornou uma das grandes potências internacionais
+          do voleibol.
+        </p>
+      </div>
+    </section>
+
+    <section id="posicoes">
+      <h2 class="section-title">Posições dos Jogadores</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🎯</div>
+          <h3>Levantador</h3>
+          <p>
+            É responsável por organizar as jogadas e fazer o levantamento
+            para que os atacantes possam finalizar.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💥</div>
+          <h3>Ponteiro</h3>
+          <p>
+            Atua principalmente no ataque pelas pontas e também possui
+            uma função importante na recepção.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧱</div>
+          <h3>Central</h3>
+          <p>
+            Especialista em bloqueios e ataques rápidos próximos ao
+            centro da rede.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔥</div>
+          <h3>Oposto</h3>
+          <p>
+            É um dos principais jogadores de ataque da equipe,
+            geralmente atuando pelo lado direito.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>Líbero</h3>
+          <p>
+            Especialista em defesa e recepção. Usa uma camisa diferente
+            dos demais jogadores.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏆</div>
+          <h3>Capitão</h3>
+          <p>
+            Representa a equipe e ajuda na comunicação com a arbitragem
+            durante a partida.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="rules" id="regras">
+      <h2 class="section-title">Principais Regras</h2>
+
+      <div class="rules-list">
+
+        <div class="rule">
+          <strong>1. Toques:</strong>
+          Cada equipe normalmente pode realizar até três toques
+          antes de enviar a bola para o outro lado.
+        </div>
+
+        <div class="rule">
+          <strong>2. Rodízio:</strong>
+          Quando uma equipe ganha o direito de sacar após receber,
+          seus jogadores realizam uma rotação.
+        </div>
+
+        <div class="rule">
+          <strong>3. Sets:</strong>
+          Uma partida normalmente é disputada em melhor de cinco sets.
+        </div>
+
+        <div class="rule">
+          <strong>4. Pontuação:</strong>
+          Os sets geralmente são disputados até 25 pontos, com
+          diferença mínima de dois pontos.
+        </div>
+
+        <div class="rule">
+          <strong>5. Bloqueio:</strong>
+          Jogadores próximos à rede podem tentar bloquear o ataque
+          adversário.
+        </div>
+
+      </div>
+    </section>
+
+    <section class="facts" id="curiosidades">
+      <h2 class="section-title">💡 Curiosidade</h2>
+
+      <div class="fact-box">
+        <p id="fact">
+          Clique no botão para descobrir uma curiosidade sobre o vôlei!
+        </p>
+
+        <button onclick="novaCuriosidade()">
+          🎲 Nova curiosidade
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>🏐 Vôlei Brasil</p>
+    <p>Site criado para aprender e conhecer mais sobre voleibol.</p>
+    <p>© 2026 - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+
+    const curiosidades = [
+      "O voleibol foi criado em 1895 por William G. Morgan.",
+      "O Brasil é uma das maiores potências do voleibol mundial.",
+      "O líbero utiliza uma camisa de cor diferente dos demais jogadores.",
+      "O voleibol de praia é disputado por equipes de dois jogadores.",
+      "O saque é a ação que inicia cada rally.",
+      "Uma equipe precisa vencer três sets para ganhar uma partida de melhor de cinco.",
+      "O bloqueio é uma das principais formas de defesa contra ataques próximos à rede."
+    ];
+
+    function novaCuriosidade() {
+
+      const numero =
+        Math.floor(Math.random() * curiosidades.length);
+
+      document.getElementById("fact").textContent =
+        curiosidades[numero];
+    }
+
+  </script>
+
+</body>
+</html>
